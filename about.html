@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <title>Geriatric Nutrition</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <style>
+    form {
+      border: 3px solid black;
+    }
+
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+
+    #bgimg {
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    h1 {
+      color: rgb(41, 75, 102);
+      font-family: sans-serif;
+      text-align: center;
+      border-spacing: 0;
+    }
+
+
+    h3 {
+      color: rgb(25, 65, 88);
+      font-family: sans-serif;
+      text-align: center;
+      border-spacing: 0;
+    }
+
+    body {
+      margin: 0;
+    }
+
+
+
+
+    .images {
+      display: inline;
+      margin: 35px;
+      padding: 10px;
+      width: 350px;
+      height: 280px;
+      opacity: .95;
+      transition: .5s ease;
+      backface-visibility: hidden;
+      float: left;
+      border-radius: 7%;
+    }
+
+    .t1:hover .images {
+      opacity: 0.5;
+    }
+
+    .content {
+      display: block;
+      margin: 0px;
+      padding: 0px;
+      position: relative;
+      top: 0px;
+      height: 100%;
+      max-width: 100%;
+      overflow-y: hidden;
+      overflow-x: auto;
+    }
+
+    .foot {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%-50%);
+    }
+
+    #li1 {
+      padding-left: 80px;
+      height: 40px;
+      padding-top: 0px;
+      margin-left: 20px;
+      width: 80px;
+      height: 80px;
+    }
+
+    #li11 {
+      padding-left: 50px;
+      height: 40px;
+      padding-top: 50px;
+      margin-left: 235px;
+      width: 80px;
+      height: 80px;
+
+
+    }
+
+    #li1:a {
+      width: 40px;
+      height: 60px;
+      background-color: lime;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      margin: 0 10px;
+      align-items: center;
+      color: red;
+    }
+
+
+    .button {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s;
+      /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 10px;
+      padding-left: auto;
+      padding-top: auto;
+    }
+
+    h3 {
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      border-spacing: 10px;
+    }
+
+    h1 {
+      color: lime;
+      font-family: sans-serif;
+      text-align: center;
+      border-spacing: 0;
+    }
+
+
+
+    .button1 {
+      background-color: limegreen;
+      color: white;
+      border: 2px solid #4CAF50;
+      margin-left: 330px;
+      margin-top: 10px;
+    }
+
+    .button1:hover {
+
+      background-color: white;
+      color: rgb(83, 35, 37);
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font: 400 15px/1.8 "Lato", sans-serif;
+      color: #777;
+    }
+
+    .bg1,
+    .bg2,
+    .bg3 {
+      position: relative;
+      opacity: 0.8;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+
+    .bg1 {
+      background-image: url("images/bg1.jpg");
+      min-height: 100%;
+    }
+
+    .bg2 {
+      background-image: url("images/bg2.jpg");
+      min-height: 400px;
+    }
+
+    .bg3 {
+      background-image: url("images/bg3.jpg");
+      min-height: 400px;
+    }
+
+    .caption {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+      border-radius: 20px;
+    }
+
+    .caption span.border {
+      background-color: #111;
+      color: #fff;
+      padding: 18px;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
+
+    h3 {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font: 20px "Lato", sans-serif;
+      color: #111;
+    }
+
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1024px) {
+
+      .bgimg-1,
+      .bgimg-2,
+      .bgimg-3 {
+        background-attachment: scroll;
+      }
+    }
+
+    /* contact me section*/
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      width: 50%;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    label,
+    input,
+    textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+  <!--Header starts-->
+  <header>
+    <div class="header-left">
+      <div class="logo">
+        <img src="./logo.jpg">
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.php">Home</a>
+          </li>
+          <li>
+            <a href="nutrition.html">Nutrition</a>
+          </li>
+          <li>
+            <a href="recipes.html">Recipes</a>
+          </li>
+          <li>
+            <a href="fitness.html">Fitness</a>
+          </li>
+          <li>
+            <a href="about.html" class="active">About</a>
+          </li>
+
+        </ul>
+        <div class="login-signup">
+          <a href="login.php" class="active">Login/Sign-up</a>
+        </div>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="login-signup">
+        <a href="login.php" class="active">Login/Sign-up</a>
+      </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+
+  <!--Header ends-->
+
+
+
+  <!--Body section-->
+
+  <div class="bg1">
+    <div class="caption">
+      <span class="border"
+        style="color: blanchedalmond; background-color: #0b2239;  border-radius: 20px; box-shadow: 10px 10px 13px rgba(0.5, 0, 0, 0.5);">
+        About Elderly Nutrition </span>
+    </div>
+  </div>
+
+  <div
+    style="color: beige;background-color:#0b2239 ; border-radius: 20px; text-align:center;padding:50px 80px;text-align: justify;">
+    <h3 style="color: blanchedalmond ;text-align:center;">Our Goal</h3>
+    <hr>
+    <pre><h4 style="color: blanchedalmond;">
+               TOPIC: Nutrition and Fitness.
+          SITE NAME: 
+          
+          DESCRIPTION: This is a nutrition web application that is specifically designed for
+          the elderly who would like to manage their health and improve their lifestyle with diet and excerise.
+          
+          (i)TARGETED AUDIENCE: For elderly above the age of 60 whether female or male
+           workout benefiting elderly.
+           specified diet for those with chronic diseases and also the healthy elderly.
+           recipe available for their needs.
+          
+          (ii)SITE AIM: to provide the elderly with a guide that provides them with a
+          flexible workout and diet plan to meet their respective
+          health and fitness goals in
+           improving bone density
+           weight/fat loss
+           improving chronic diseases etc...
+         
+          
+          that would be possible to be followed parallelly with their
+          day to day schedule.
+          
+          (iii)UNIQUENESS: Unlike other nutrition websites and apps that are generally set up for profit instead of supporting the users to obtain their physical objective, 
+          this web app will enable users to reach their weight goals and also to keep a healthy diet
+          as it provides important diets and exercise regimens for weight-loss, improving chronic diseases, and adopting healthy lifestyle.
+          
+          SITE DESCRIPTION: contain pages for:
+          
+           for workout plans for different muscle groups
+           for different diet plans for chronic diseases.
+           links directing to video tutorials on how to
+          perform particular exercises.
+           images for visual understanding by the users.
+           recipe section for the user to cook healthy foods.
+          q&amp;a to provide one to one solutions.</h4></pre>
+  </div>
+
+  <div class="bg2">
+    <div class="caption">
+      <span class="border"
+        style="background-color:rgb(9, 9, 9);font-size:25px; border-radius: 20px; color: rgb(255, 253, 253);">IF IT
+        DOESN'T
+        CHALLANGE YOU<BR>IT DOESN'T CHANGE YOU</span>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+    <div
+      style="color:blanchedalmond;background-color:#0b2239; border-radius: 20px; text-align:center; padding:50px 80px;text-align: justify;">
+      <h4>Q/A forum<br>
+        <hr>
+        <pre>Doubts:
+          1)Does the website store the name, age, and BMI of the elderly and suggest a diet and workout
+          plan based on that?
+              -Reply-
+          1)-yes the user will enter all his/her details when he/she logs in for the first time and can later on make
+          changes to keep it upto date with his/her current growth status
+          Comments:
+          It is a pretty good idea as it focuses on the users,which is unlike the regular nutrition and fitness apps
+          that covers the diets of vegetarians and meat-eating people at the expense of their money</pre>
+      </h4>
+    </div>
+  </div>
+
+  <div class="bg3">
+    <div class="caption">
+      <span class="border"
+        style="background-color:black;font-size:25px; border-radius: 20px; color: rgb(255, 254, 254);">THAT'S ALL
+        !</span>
+    </div>
+  </div>
+
+  <div style="position:relative;">
+    <div
+      style="color:blanchedalmond;background-color:#0b2239; border-radius: 20px; text-align:center;padding:50px 80px;text-align: justify;">
+      <h4>
+        <pre>User Reviews:<HR>
+                  The nutrition web app is very useful and it has helped me to reduce weight and also
+                  acheive my weight goal and improve my health.
+            </pre>
+      </h4>
+    </div>
+  </div>
+
+  <div class="bg3">
+   
+      <div class="contact-container">
+     
+        <form>
+          <h3 style="text-decoration: underline;">Contact Me</h3>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <input type="submit" value="Submit">
+          </form>
+    
+        </form>
+      </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <!--scroll-top-->
+  <button id="btnScrollToTop">
+    <i class="material-icons">arrow_upward</i>
+  </button>
+
+
+  <script>
+   const btnScrollToTop = document.querySelector("#btnScrollToTop");
+
+    btnScrollToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
+
+      $("html, body").animate({
+        scrollTop: 0
+      }, 1000); // increase the duration to 1000ms (1 second)
+    });
+
+
+
+    const form = document.querySelector('form');
+    const submitButton = form.querySelector('input[type="submit"]');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Get the form data
+      const formData = new FormData(form);
+
+      // Send an email using the form data
+      const mailtoLink = `mailto:adamfarhan831@gmail.com?subject=${formData.get('subject')}&body=${formData.get('message')}`
+      window.location.href = mailtoLink;
+    });
+
+  </script>
+
+
+
+
+
+  <!--footer starts-->
+  <footer class="footer">
+    <div class="footer-bottom">
+        <p>copyright &copy;2023 geriatricNutrition. designed by <span>Abdiaziz</span></p>
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+        
+    </footer>
+
+  <!--Footer ends-->
+
+  <script src="app.js"></script>
+</body>
+
+</html>

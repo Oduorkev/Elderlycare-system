@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
+    
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>   
+    
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>Geriatric Nutrition</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body id="budy">
+
+  <style>
+    
+    *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg: hsl(0, 0%, 12%);
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  background: var(--body-bg);
+  color: white;
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.site-title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.25rem;
+}
+
+section {
+  padding-block: 5rem;
+}
+
+.diagonal {
+  --skew-angle: -5deg;
+  --background: linear-gradient(
+                  45deg, 
+                  #12c2e9, 
+                  #c471ed, 
+                  #f64f59
+                );
+
+  position: relative;
+  isolation: isolate;
+}
+
+.diagonal::after {
+  content: '';
+  background: var(--background);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(var(--skew-angle));
+}
+
+.spikes {
+  --spike-width: 50px;
+  --spike-height: 10px;
+  --spike-color: var(--body-bg);
+  
+  position: relative;
+  color: black;
+  background: 
+    linear-gradient(
+      to right, 
+      #fdc830, 
+      #f37335);
+}
+
+.spikes::before,
+.spikes::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: var(--spike-height);
+  background: var(--spike-color);
+  -webkit-mask-image: url('assets/triangle.svg');
+  -webkit-mask-size: var(--spike-width) var(--spike-height);
+  /* -webkit-mask-repeat: repeat-x; */
+  mask-image: url('assets/triangle.svg');
+  mask-size: var(--spike-width) var(--spike-height);
+  /* mask-repeat: repeat-x; */
+}
+
+.spikes::before {
+  top: 0;
+}
+.spikes::after {
+  bottom: 0;
+  transform: rotate(.5turn);
+}
+
+
+.wavy {
+  /* mask created with 
+  https://css-generators.com/wavy-shapes/ */
+  
+  background: 
+    linear-gradient(
+      to right, 
+      #00f260, 
+      #0575e6);
+
+  --mask:
+    radial-gradient(50.39px at 50% 68.75px,#000 99%,#0000 101%) calc(50% - 50px) 0/100px 51% repeat-x,
+    radial-gradient(50.39px at 50% -43.75px,#0000 99%,#000 101%) 50% 25px/100px calc(51% - 25px) repeat-x,
+    radial-gradient(50.39px at 50% calc(100% - 68.75px),#000 99%,#0000 101%) calc(50% - 50px) 100%/100px 51% repeat-x,
+    radial-gradient(50.39px at 50% calc(100% + 43.75px),#0000 99%,#000 101%) 50% calc(100% - 25px)/100px calc(51% - 25px) repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+}
+</style>
+  
+    <!--Header starts-->
+    <header>
+        <div class="header-left">
+            <div class="logo">
+                <img src="./logo.jpg" >
+            </div>
+            <nav>
+              <ul>
+                  <li>
+                      <a href="index.php" >Home</a>
+                  </li>
+                  <li>
+                      <a href="nutrition.html" class="active">Nutrition</a>
+                  </li>
+                  <li>
+                      <a href="recipes.html">Recipes</a>
+                  </li>
+                  <li>
+                      <a href="fitness.html">Fitness</a>
+                  </li>
+                  <li>
+                      <a href="about.html">About</a>
+                  </li>
+
+              </ul>
+              <div class="login-signup">
+                  <a href="login.php">Login/Sign-up</a>
+              </div>
+          </nav>
+    </div>
+    <div class="header-right">
+        <div class="login-signup">
+            <a href="login.php">Login/Sign-up</a>
+        </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!--Header ends-->
+
+    
+  <!--Body section-->
+
+    <section>
+        <div class="wrapper">
+    
+          <h2 class="section-title"></h2>
+          <div class="d-1">
+            <img src="images/osteop.jpg">
+            <div class="contents">
+                <p >Diet for Osteoprosis</p>
+                <h4 style="text-decoration: underline;"> FOOD NUTRIENT</h4>
+                <p>
+                    Dairy products such as low-fat and non-fat milk, yogurt and cheese Calcium. Some dairy products are
+                    fortified with Vitamin D. <br><hr>
+                    Fish
+                    Canned sardines and salmon (with bones) has Calcium
+                    Fatty varieties such as salmon, mackerel, tuna and sardines provide Vitamin D. <br><hr>
+                    Fruits and vegetables
+                    Collard greens, turnip greens, kale, okra, Chinese cabbage, dandelion greens, mustard greens and
+                    broccoli has <em>Calcium</em><hr>
+                    Spinach, beet greens, okra, tomato products, artichokes, plantains, potatoes, sweet potatoes, collard
+                    greens, prunes and raisins has<em>Magnesium</em><hr>
+                    Tomato products, prunes, raisins, potatoes, spinach, sweet potatoes, papaya, oranges, orange juice,
+                    bananas and plantains has <eM>Potassium</eM><hr>
+                    Red peppers, green peppers, oranges, grapefruits, broccoli, strawberries, brussels sprouts, papaya and
+                    pineapples has <em>Vitamin C</em><hr>
+                    Prunes. Dark green leafy vegetables such as kale, collard greens, spinach, mustard greens, turnip greens
+                    and brussel sprouts has <em>Vitamin K</em><hr>
+                    Fortified Foods
+                    Calcium and vitamin D are sometimes added to certain brands of juices, breakfast foods, soy milk, rice
+                    milk, cereals, snacks and breads has <em>Calcium, Vitamin D</em></p><hr>
+    
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      
+      <section class="diagonal">
+        <div class="wrapper">
+    
+          <h2 class="section-title"></h2>
+          <div class="d-2">
+            <img src="images/canc.jpeg">
+            <p>Diet for Cancer</p>
+            <div class="contents">
+                <h4 style="text-decoration: underline;"> Foods to Consume During Cancer Treatment</h4>
+    
+                <p>
+                    Plant-based Proteins
+                    Some of the best foods to eat during chemotherapy or other cancer treatments are plant-based proteins.
+                    They offer the highest levels of vitamins and minerals, Rajagopal says. This means eating lots of
+                    vegetables as well as beans, legumes, nuts and seeds. If you do eat animal proteins, choose lean options
+                    like chicken or fish.<br><hr>
+    
+                    Healthy Fats
+                    Monounsaturated and polyunsaturated fats also have health benefits. Avocados, olive oil, grapeseed oil
+                    and walnuts are all high in omega-3 fatty acids, which help combat inflammation and improve
+                    cardiovascular health.<br><hr>
+    
+                    Healthy Carbs
+                    When choosing carbohydrates, opt for foods that are minimally processed, like whole wheat, bran and
+                    oats. These have soluble fiber, which helps maintain good gut bacteria. Soluble fiber also promotes the
+                    production of short-chain fatty acids (SCFAs), which lend a hand to everything from metabolism to
+                    cellular repair.<br><hr>
+    
+                    Vitamins and Minerals
+                    “Vitamins and minerals help our bodies' enzymatic processes, which play a big role in boosting immune
+                    function and reducing inflammation,” Rajagopal says. When possible, select foods fortified with vitamin
+                    D. These may include milk, orange juice, yogurt and some cereals.<br><hr>
+    
+                    Should you take supplements during cancer treatment?
+                    If you're not eating as much as usual during treatment, or if you have side effects like vomiting and
+                    diarrhea that cause you to lose vitamins and nutrients, you might consider taking a multivitamin.<br><hr>
+    
+                    “Vitamin D tends to be the most common vitamin deficiency,” says Rajagopal. “Vitamin D helps keep your
+                    immune system strong, reduces fatigue and supports bone health. Especially if you're on steroids, you'll
+                    be at risk for bone density loss.”<br><hr>
+                </p>
+            </div>
+        </div>
+    
+        </div>
+      </section>
+    
+      <section>
+        <div class="wrapper">
+    
+          <h2 class="section-title"></h2>
+          <div class="d-3">
+            <img src="images/immgg.jpg">
+            <p>Diet for Hypertension</p>
+            <div class="contents">
+                <h4 style="text-decoration: underline;">DASH stands for "Dietary Approaches to Stop Hypertension." Diet</h4>
+                <P>
+                    Grains: 6 to 8 servings a day. One serving is one slice bread, 1 ounce dry cereal, or 1/2 cup cooked
+                    cereal, rice or pasta. <br><hr>
+                    Vegetables: 4 to 5 servings a day. One serving is 1 cup raw leafy green vegetable, 1/2 cup cut-up raw or
+                    cooked vegetables, or 1/2 cup vegetable juice.<br><hr>
+                    Fruits: 4 to 5 servings a day. One serving is one medium fruit, 1/2 cup fresh, frozen or canned fruit,
+                    or 1/2 cup fruit juice.<br><hr>
+                    Fat-free or low-fat dairy products: 2 to 3 servings a day. One serving is 1 cup milk or yogurt, or 1 1/2
+                    ounces cheese.<br><hr>
+                    Lean meats, poultry and fish: six 1-ounce servings or fewer a day. One serving is 1 ounce cooked meat,
+                    poultry or fish, or 1 egg.<br><hr>
+                    Nuts, seeds and legumes: 4 to 5 servings a week. One serving is 1/3 cup nuts, 2 tablespoons peanut
+                    butter, 2 tablespoons seeds, or 1/2 cup cooked legumes (dried beans or peas).<br><hr>
+                    Fats and oils: 2 to 3 servings a day. One serving is 1 teaspoon soft margarine, 1 teaspoon vegetable
+                    oil, 1 tablespoon mayonnaise or 2 tablespoons salad dressing.<br><hr>
+                    Sweets and added sugars: 5 servings or fewer a week. One serving is 1 tablespoon sugar, jelly or jam,
+                    1/2 cup sorbet, or 1 cup lemonade.<br><hr>
+                </P>
+            </div>
+        </div>
+    
+        </div>
+      </section>
+    
+      <section class="spikes">
+        <div class="wrapper">
+    
+          <h2 class="section-title"></h2>
+          
+    <div class="d-4">
+        <img src="images/ggmm.jpg">
+        <p>Diet for Diabetes</p>
+        <div class="contents">
+            <h4 style="text-decoration: underline;">Healthy Foods</h4>
+            <p>Fruits and vegetables<br>
+                Whole grains, such as whole wheat, brown rice, barley, quinoa, and oats<br><hr>
+                Proteins, such as lean meats, chicken, turkey, fish, eggs, nuts, beans, lentils, and tofu<br><hr>
+                Nonfat or low-fat dairy, such as milk, yogurt, and cheese<br></p><hr>
+        </div>
+    </div>
+    
+        </div>
+      </section>
+    
+      <section>
+        <div class="wrapper">
+    
+          <h2 class="section-title"></h2>
+          <div class="d-5">
+            <img src="images/lemos.jpg">
+            <p>Diet for Arthritis</p>
+            <div class="contents">
+                <h4 style="text-decoration: underline;">Mediterranean Diet</h4>
+                <p>
+                    Fish
+                    How much: Health authorities like the American Heart Association and the Academy of Nutrition and
+                    Dietetics recommend three to four ounces of fish, twice a week. Arthritis experts claim more is better. <br>
+                    Best sources: Salmon, tuna, sardines, herring, anchovies, scallops and other cold-water fish. <br>
+                    Hate fish?
+                    Take a supplement. Studies show that taking 600 to 1,000 mg of fish oil daily eases joint stiffness,
+                    tenderness, pain and swelling.<br><hr>
+    
+                    Nuts & Seeds
+    
+                    How much: Eat 1.5 ounces of nuts daily (one ounce is about a handful). <br>
+                    Best sources: Walnuts, pine nuts, pistachios and almonds.<br><hr>
+    
+                    Fruits & Vegetables
+    
+                    How much: Aim for nine or more servings daily (one serving equals one cup of most veggies or fruit or
+                    two cups of raw leafy greens). <br>
+                    Best sources: Colorful fruits and veggies — the darker or more brilliant the color, the more
+                    antioxidants it has. Good ones include blueberries, cherries, spinach, kale and broccoli.<br><hr>
+    
+                    Olive Oil
+    
+                    How much: Two to three tablespoons daily. <br>
+                    Best sources: Extra virgin olive oil goes through less refining and processing, so it retains more
+                    nutrients than standard varieties. And it's not the only oil with health benefits. Avocado and safflower
+                    oils have shown cholesterol-lowering properties, while walnut oil has 10 times the omega-3s that olive
+                    oil has.<br><hr>
+    
+                    Whole Grains
+    
+                    How much: Eat a total of six ounces of grains per day; at least three of which should come from whole
+                    grains. One ounce of whole grain would be equal to ½ cup cooked brown rice or one slice of whole-wheat
+                    bread. <br>
+                    Best sources: Eat foods made with the entire grain kernel, like whole-wheat flour, oatmeal, bulgur,
+                    brown rice and quinoa. Some people may need to be careful about which whole grains they eat. <br>
+                    Gluten — a protein found in wheat and other grains — has been linked to inflammation for people with celiac disease
+                    (CD) or gluten sensitivity. <br><hr>
+    
+                </p>
+            </div>
+        </div>
+    
+        </div>
+      </section>
+    
+      <section class="wavy">
+        <div class="wrapper">
+    
+          <h2 class="section-title"></h2>
+          <div class="d-6">
+            <img src="images/hrtdi.jpg">
+            <p>Diet for Heart Disease</p>
+            <div class="contents">
+                <h4 style="text-decoration: underline;">Steps to prevent heart disease</h4>
+                <p>
+                    Control your portion size
+                    Use a small plate or bowl to help control your portions.
+                    Eat more low-calorie, nutrient-rich foods, such as fruits and vegetables<br><hr>
+
+                    Eat more vegetables and fruits
+                    Fresh or frozen vegetables and fruits
+                    Low-sodium canned vegetables
+                    Canned fruit packed in juice or water<br><hr>
+
+                    Select whole grains
+                    Whole-wheat flour
+                    Whole-grain bread, preferably 100% whole-wheat bread or 100% whole-grain bread
+                    High-fiber cereal with 5 g or more fiber in a serving
+                    Whole grains such as brown rice, barley and buckwheat (kasha)
+                    Whole-grain pasta<br><hr>
+
+                    Limit unhealthy fats
+                    Saturated fat Less than 6% of total daily calories.* If you're eating 2,000 calories a day, that's
+                    about 11 to 13 grams.
+                    Trans fat Avoid
+                    Fats to choose
+                    Olive oil
+                    Canola oil
+                    Vegetable and nut oils
+                    Margarine, trans fat free
+                    Cholesterol-lowering margarine, such as Benecol, Promise Activ or Smart Balance
+                    Nuts, seeds
+                    Avocados<br><hr>
+
+                    Fats to limit
+                    Butter
+                    Lard
+                    Bacon fat
+                    Gravy
+                    Cream sauce
+                    Nondairy creamers
+                    Hydrogenated margarine and shortening
+                    Cocoa butter, found in chocolate<br><hr>
+
+                </p>
+            </div>
+        </div>
+
+        </div>
+        
+      </section>
+    
+  
+
+
+<!--scroll-top-->
+ <button id="btnScrollToTop">
+    <i class="material-icons">arrow_upward</i>
+ </button>
+
+
+    
+     <!--footer starts-->  
+     <footer class="footer">
+        <div class="footer-bottom">
+            <p>copyright &copy;2023 geriatricNutrition. designed by <span>Abdiaziz</span></p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+            
+        </footer>
+
+    <!--Footer ends-->
+
+        <script>
+          const btnScrollToTop = document.querySelector("#btnScrollToTop");
+
+btnScrollToTop.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    });
+
+    $("html, body").animate({
+        scrollTop: 0
+    }, 1000); // increase the duration to 1000ms (1 second)
+});
+
+        </script>
+
+<script src="app.js"></script>
+</body>
+</html>
